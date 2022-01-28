@@ -1,0 +1,51 @@
+﻿@model List<BlogPost>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to my Super Cool Blog</h1>
+    <h2>Be prepared to read some of the most interesting blogs from some of our most prestigious users.</h2>
+</div>
+    
+<div>
+    <p> </p>
+    <h4 class="text-center"><b>You'll be able to read about:</b></h4>
+    <ul> 
+        <li>Kebabs</li>
+        <li>AP Physics</li>
+        <li>Motorsports</li>
+        <li>Fishing</li>
+        <li>My eternal love for Extazy</li>
+        <li>My fringe political views which I whole heartedly believe</li>
+    </ul>
+</div>
+
+<div> 
+   <p>---------------------------------------------------------------------------------------------------------------</p>
+</div>
+
+@foreach (var post in Model)
+{
+    <div class="col-12">
+        <h1 class="display-4">@post.Title</h1>
+        <p>
+            @post.Body
+        </p>
+        Comments: @post.Comments.Count
+    </div>
+}
+
+<div class="text-center">
+    <img src = "https://th.bing.com/th/id/OIF.b3VhLEIgefQGvkIJKgQNWA?pid=ImgDet&rs=1" alt="Tilted Towers class="center-block">
+</div>
+
+<div class = "text-center">
+    <b>BREAKING: </b>
+    <p>Titled Towers has returned to the Fortnite map, make sure to recall your squad. Drop Tilted and pick up some memories from a simpler time. Hope to see you there</p>
+</div>
+
+
+

@@ -1,0 +1,46 @@
+﻿@model BlogPost
+
+<div class="row mt-5">
+    <div class="col">
+        <h1>@Model.Title</h1>
+    </div>
+</div>
+
+<h1>Comments</h1>
+
+<div class="row">
+    <div class="col-md-4">
+            <form asp-controller="Home" asp-action="Create" method="post">
+            <input type="hidden" name="PostId" value="@Model.PostId" />
+            <div class="form-group">
+                <label class="control-label" for="Title">Title</label>
+                <input class="form-control" type="text" data-val="true" data-val-required="The Title field is required." id="Title" name="Title" value="">
+                <span class="text-danger field-validation-valid" data-valmsg-for="Title" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Name">Name</label>
+                <input class="form-control" type="text" data-val="true" data-val-required="The Name field is required." id="Name" name="Name" value="">
+                <span class="text-danger field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Body">Body</label>
+                <input class="form-control" type="text" data-val="true" data-val-required="The Body field is required." id="Body" name="Body" value="">
+                <span class="text-danger field-validation-valid" data-valmsg-for="Body" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Email">Email</label>
+                <input class="form-control" type="text" data-val="true" data-val-required="The Email field is required." id="Email" name="Email" value="">
+                <span class="text-danger field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary">
+            </div>
+            </form>
+    </div>
+</div>
+
+@foreach (var comment in Model.Comments)
+{
+    <h3>@comment.Title</h3>
+    <p>@comment.Body</p>
+}
